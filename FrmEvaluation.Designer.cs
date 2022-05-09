@@ -54,6 +54,7 @@
 			this.cboActivities.Name = "cboActivities";
 			this.cboActivities.Size = new System.Drawing.Size(121, 21);
 			this.cboActivities.TabIndex = 0;
+			this.cboActivities.SelectedIndexChanged += new System.EventHandler(this.cboActivities_SelectedIndexChanged);
 			// 
 			// lbAktivnost
 			// 
@@ -131,6 +132,7 @@
 			this.btnCancel.TabIndex = 9;
 			this.btnCancel.Text = "Odustani";
 			this.btnCancel.UseVisualStyleBackColor = true;
+			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
 			// 
 			// label4
 			// 
