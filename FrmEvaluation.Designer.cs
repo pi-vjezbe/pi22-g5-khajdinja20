@@ -142,7 +142,6 @@
 			this.label4.Size = new System.Drawing.Size(60, 13);
 			this.label4.TabIndex = 10;
 			this.label4.Text = "Ocjenjivač:";
-			this.label4.Click += new System.EventHandler(this.label4_Click);
 			// 
 			// label5
 			// 

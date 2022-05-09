@@ -23,10 +23,6 @@ namespace Evaluation_Manager
 			student = selectedStudent;
 		}
 
-		private void label4_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void FrmEvaluation_Load(object sender, EventArgs e)
 		{
