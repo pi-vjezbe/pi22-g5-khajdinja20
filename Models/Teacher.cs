@@ -17,10 +17,10 @@ namespace Evaluation_Manager.Models
             return Password == password;
         }
 
-        public void PreformEvaluation(Student student, Activity activity, int points)
+        public void PerformEvaluation(Student student, Activity activity, int points)
         {
-            Evaluation evaluation = EvaluationRepository.GetEvaluation(student, activity);
-            if(evaluation == null)
+            var evaluation = EvaluationRepository.GetEvaluation(student, activity);
+            if (evaluation == null)
             {
                 EvaluationRepository.InsertEvaluation(student, activity, this, points);
             }
@@ -29,5 +29,7 @@ namespace Evaluation_Manager.Models
                 EvaluationRepository.UpdateEvaluation(evaluation, this, points);
             }
         }
+
+
     }
 }

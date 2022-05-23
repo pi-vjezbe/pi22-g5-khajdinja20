@@ -16,7 +16,6 @@ namespace Evaluation_Manager
     {
         public static Teacher LoggedTeacher { get; set; }
 
-
         public FrmLogin()
         {
             InitializeComponent();
@@ -24,7 +23,6 @@ namespace Evaluation_Manager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
             if (txtUsername.Text == "")
             {
                 MessageBox.Show("Korisničko ime nije uneseno!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -35,7 +33,10 @@ namespace Evaluation_Manager
             }
             else
             {
-                if (LoggedTeacher != null && LoggedTeacher.CheckPassword(txtPassword.Text))
+                LoggedTeacher = TeacherRepository.GetTeacher(txtUsername.Text);
+
+                if (LoggedTeacher != null && LoggedTeacher.Password == txtPassword.Text)
+
                 {
                     FrmStudents frmStudents = new FrmStudents();
                     Hide();
@@ -47,11 +48,6 @@ namespace Evaluation_Manager
                     MessageBox.Show("Krivi podaci!", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-        }
-
-        private void FrmLogin_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

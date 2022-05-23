@@ -11,11 +11,12 @@ namespace Evaluation_Manager.Repositories
 {
     public class TeacherRepository
     {
-        public static Teacher GetTeacher(string username) 
+        public static Teacher GetTeacher(string username)
         {
             string sql = $"SELECT * FROM Teachers WHERE Username = '{username}'";
             return FetchTeacher(sql);
         }
+
 
         public static Teacher GetTeacher(int id)
         {
@@ -36,6 +37,7 @@ namespace Evaluation_Manager.Repositories
                 reader.Close();
             }
             DB.CloseConnection();
+
             return teacher;
         }
 
@@ -57,5 +59,6 @@ namespace Evaluation_Manager.Repositories
             };
             return teacher;
         }
+
     }
 }
